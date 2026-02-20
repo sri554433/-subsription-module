@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Course Subscription Plans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+}
+
+.header{
+text-align:center;
+margin-top:40px;
+animation:fadeDown 1s ease;
+}
+
+.header h1{
+font-size:36px;
+}
+
+.header p{
+color:#cbd5e1;
+}
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+padding:50px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+width:260px;
+text-align:center;
+transition:0.4s;
+backdrop-filter:blur(10px);
+position:relative;
+animation:fadeUp 1s ease;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.04);
+box-shadow:0 0 25px rgba(56,189,248,0.7);
+}
+
+.popular{
+border:2px solid #38bdf8;
+box-shadow:0 0 25px rgba(56,189,248,0.9);
+}
+
+.badge{
+position:absolute;
+top:-12px;
+right:20px;
+background:#38bdf8;
+padding:6px 14px;
+border-radius:20px;
+font-size:12px;
+}
+
+.card h2{
+margin-bottom:10px;
+}
+
+.price{
+font-size:30px;
+margin:15px 0;
+color:#38bdf8;
+}
+
+.features{
+list-style:none;
+padding:0;
+}
+
+.features li{
+margin:10px 0;
+color:#cbd5e1;
+}
+
+.btn{
+margin-top:20px;
+padding:12px;
+width:100%;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:#0ea5e9;
+transform:scale(1.05);
+}
+
+.logout{
+position:absolute;
+top:20px;
+right:20px;
+background:#ef4444;
+padding:8px 16px;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.logout:hover{
+background:#dc2626;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="logout" onclick="location.href='/logout/'">
+Logout
+</button>
+
+<div class="header">
+<h1>Choose Your Subscription Plan 📚</h1>
+<p>Unlock premium courses and boost your career</p>
+</div>
+
+<div class="container">
+
+<!-- MONTHLY -->
+<div class="card">
+
+<h2>Monthly Plan</h2>
+
+<div class="price">₹499</div>
+
+<ul class="features">
+
+<li>Access All Courses</li>
+<li>Unlimited Learning</li>
+<li>Course Certificate</li>
+<li>Community Support</li>
+
+</ul>
+
+<button class="btn"
+onclick="location.href='/payment/?plan=monthly'">
+Subscribe Now
+</button>
+
+</div>
+
+
+<!-- 6 MONTHS -->
+<div class="card">
+
+<h2>6 Months Plan</h2>
+
+<div class="price">₹2499</div>
+
+<ul class="features">
+
+<li>Access All Courses</li>
+<li>Save 15%</li>
+<li>Priority Support</li>
+<li>Certificates Included</li>
+
+</ul>
+
+<button class="btn"
+onclick="location.href='/payment/?plan=6months'">
+Subscribe Now
+</button>
+
+</div>
+
+
+<!-- YEARLY -->
+<div class="card">
+
+<h2>Yearly Plan</h2>
+
+<div class="price">₹4499</div>
+
+<ul class="features">
+
+<li>Access All Courses</li>
+<li>Save 30%</li>
+<li>Priority Support</li>
+<li>Career Guidance</li>
+
+</ul>
+
+<button class="btn"
+onclick="location.href='/payment/?plan=yearly'">
+Subscribe Now
+</button>
+
+</div>
+
+
+<!-- PREMIUM -->
+<div class="card popular">
+
+<div class="badge">Most Popular</div>
+
+<h2>Premium Yearly</h2>
+
+<div class="price">₹5999</div>
+
+<ul class="features">
+
+<li>All Yearly Features</li>
+<li>Live Mentorship</li>
+<li>Interview Preparation</li>
+<li>Placement Support</li>
+
+</ul>
+
+<button class="btn"
+onclick="location.href='/payment/?plan=premium'">
+Subscribe Now
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>

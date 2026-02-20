@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+}
+
+/* HEADER */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(11,44,61,0.9);
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.logo{
+font-size:20px;
+font-weight:600;
+color:#38bdf8;
+}
+
+.logout{
+background:#ef4444;
+padding:8px 15px;
+border:none;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+.logout:hover{
+background:#dc2626;
+}
+
+/* DASHBOARD */
+.dashboard{
+padding:30px;
+animation:fadeUp 0.8s ease;
+}
+
+/* STATS */
+.stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:12px;
+width:200px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(56,189,248,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(56,189,248,0.5);
+}
+
+.card h3{
+margin:0;
+font-size:18px;
+color:#cbd5e1;
+}
+
+.card p{
+font-size:26px;
+color:#38bdf8;
+margin:10px 0 0;
+}
+
+/* TABLE */
+.table-container{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th, td{
+padding:12px;
+text-align:left;
+}
+
+th{
+color:#38bdf8;
+}
+
+tr{
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+button{
+padding:6px 12px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.edit{
+background:#38bdf8;
+color:white;
+}
+
+.delete{
+background:#ef4444;
+color:white;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="logo">
+SkillZen Admin
+</div>
+
+<button class="logout" onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<div class="dashboard">
+
+<!-- STATS -->
+<div class="stats">
+
+<div class="card">
+<h3>Total Users</h3>
+<p>120</p>
+</div>
+
+<div class="card">
+<h3>Active Subscriptions</h3>
+<p>85</p>
+</div>
+
+<div class="card">
+<h3>Total Revenue</h3>
+<p>₹</p>
+</div>
+
+<div class="card">
+<h3>New Users</h3>
+<p>12</p>
+</div>
+
+</div>
+
+<!-- USER TABLE -->
+<div class="table-container">
+
+<h2>Users</h2>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Plan</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>
+<button class="edit">Edit</button>
+<button class="delete">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>
+<button class="edit">Edit</button>
+<button class="delete">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>
+<button class="edit">Edit</button>
+<button class="delete">Delete</button>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+
+// BLOCK DIRECT ACCESS
+if(localStorage.getItem("adminLoggedIn") !== "true"){
+
+alert("Access Denied. Login First");
+
+window.location.href = "admin-login.html";
+
+}
+
+
+function logout(){
+
+localStorage.removeItem("adminLoggedIn");
+
+window.location.href="admin-login.html";
+
+}
+
+
+</script>
+
+</body>
+</html>

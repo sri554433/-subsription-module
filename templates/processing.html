@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Processing Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+overflow:hidden;
+}
+
+/* CARD */
+.container{
+animation:fadeUp 0.8s ease;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:15px;
+width:350px;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(56,189,248,0.2);
+}
+
+/* TITLE */
+.title{
+font-size:24px;
+margin-bottom:10px;
+}
+
+/* SUBTEXT */
+.subtitle{
+color:#94a3b8;
+margin-bottom:25px;
+}
+
+/* SPINNER */
+.spinner{
+width:70px;
+height:70px;
+border:5px solid rgba(255,255,255,0.1);
+border-top:5px solid #38bdf8;
+border-radius:50%;
+margin:auto;
+animation:spin 1s linear infinite;
+box-shadow:0 0 20px #38bdf8;
+}
+
+/* PROGRESS BAR */
+.progress{
+width:100%;
+height:8px;
+background:rgba(255,255,255,0.1);
+border-radius:10px;
+margin-top:30px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+width:0%;
+animation:load 2.5s linear forwards;
+box-shadow:0 0 10px #38bdf8;
+}
+
+/* TEXT */
+.status{
+margin-top:15px;
+color:#cbd5e1;
+animation:pulse 1.5s infinite;
+}
+
+/* ANIMATIONS */
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+@keyframes load{
+0%{width:0%;}
+100%{width:100%;}
+}
+
+@keyframes pulse{
+0%{opacity:0.4;}
+50%{opacity:1;}
+100%{opacity:0.4;}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+<!-- Redirect after animation -->
+<script>
+setTimeout(() => {
+window.location.href = "success.html";
+}, 2500);
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="title">
+Processing Payment ⏳
+</div>
+
+<div class="subtitle">
+Securing your subscription...
+</div>
+
+<div class="spinner"></div>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<div class="status">
+Please wait while we confirm your payment
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
